@@ -8,7 +8,7 @@ exports.run = (msg, params, prefix) => {
 
   }
 
-  let role = msg.guild.roles.find("name", params.join(" "));
+  let role = msg.guild.roles.cache.find(role => role.name === `${params.join(" ")}`);
   if (!role) return msg.channel.send(`There is no such role try using "${prefix}self roles" to see all the available self-roles`);
   let target = msg.member;
 
@@ -21,7 +21,7 @@ exports.run = (msg, params, prefix) => {
       if(SELF_ROLE == notAllowed[currentStatIndex]){
         return msg.reply("You are not allowed to self assign the role: " + role.name)
       }else{
-        return target.addRole(role.id).then(() => {
+        return target.roles.add(role.id).then(() => {
           msg.channel.send(`You have been given the: "${role.name}" role!`)
         })
       }

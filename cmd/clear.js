@@ -11,7 +11,7 @@ exports.run = (bot, msg, params) => {
     } else {
   
     }{
-      msg.channel.fetchMessages({limit: messagecount}).then(messages => msg.channel.bulkDelete(messages, true));
+      msg.channel.bulkDelete(messagecount);
     }
 
 };

@@ -7,7 +7,7 @@ exports.run = async (bot, msg, params) => {
 
   await msg.channel.send({files: [
     {
-      attachment: target.displayAvatarURL,
+      attachment: target.displayAvatarURL({ format: 'png', dynamic: true }),
       name: "avatar.png"
     }
   ]});

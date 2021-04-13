@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-var rules1 = new Discord.RichEmbed()
+var rules1 = new Discord.MessageEmbed()
         .addField("Rules (1/2):", "---------------------------------------------------------------------------------------\n" +
                                   "__**1.**__ No spamming or flooding the chat with messages, symbols or pictures etc. \n" +
                                   "__**2.**__ Do not type in all Caps, Bold, Italic or other formats unless you're a  Admin. \n" +
@@ -13,7 +13,7 @@ var rules1 = new Discord.RichEmbed()
         .setColor("0xFF0000")
         
 
-var rules2 = new Discord.RichEmbed()
+var rules2 = new Discord.MessageEmbed()
         .addField("Rules (2/2):", "__**8.**__ No using peoples usernames and/or posing as them. \n" +
                                   "__**9.**__ No begging or repeatedly asking for permissions in the chat. \n" +
                                   "__**10.**__. No offensive names or names which contain swear words. \n" +

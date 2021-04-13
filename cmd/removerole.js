@@ -6,8 +6,8 @@ exports.run = (bot, msg, params) => {
     let muteRole3 = msg.mentions.roles.first();
     if(!muteRole3) return msg.reply(":x: " + `| There is no such thing as a \"${muteRole3.name}\" role!`);
   
-    member3.removeRole(muteRole3.id);
-    msg.channel.send(member3 + ` you have lost the role: ` + muteRole3.name + `!`);
+    member3.roles.remove(muteRole3.id);
+    msg.channel.send(`${member3} you have lost the role: ` + muteRole3.name + `!`);
   
 };
 

@@ -15,7 +15,7 @@ exports.run = async (bot, msg, params) => {
   }
 
   if(!msg.guild.member(bot.user).hasPermission("KICK_MEMBERS")){
-    return msg.reply(":x: " + "| i need the \"KICK_MEMBERS\" permission!").catch(console.error);
+    return msg.reply(":x: " + "| I need the \"KICK_MEMBERS\" permission!").catch(console.error);
   }
 
   let VOTE_TEXT = await msg.channel.send("Vote now! (10 Seconds)");
@@ -34,7 +34,7 @@ exports.run = async (bot, msg, params) => {
     var YES_Count = reactions.get(agree).count;
   }
 
-  var sumsum = new Discord.RichEmbed()
+  var sumsum = new Discord.MessageEmbed()
   
             .addField("Voting Finished:", "----------------------------------------\n" +
                                           "Total votes (NO): " + `${NO_Count-1}\n` +

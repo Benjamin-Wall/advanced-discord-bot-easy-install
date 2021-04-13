@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = (bot, msg, params) => {
 
-  ROLEZZ = msg.guild.roles.array()
+  ROLEZZ = msg.guild.roles.cache.array()
   
   var ROLES = "";
 

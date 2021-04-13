@@ -10,15 +10,15 @@ exports.run = (bot, msg, params) => {
 
   let time2 = params[2];
   if (!time2) {
-    member2.addRole(muteRole2.id);
-    msg.channel.send(member2 + ` you have been given the permanent role: ` + muteRole2.name);
+    member2.roles.add(muteRole2.id);
+    msg.channel.send(`${member2} you have been given the permanent role: ` + muteRole2.name);
   } else {
-    member2.addRole(muteRole2.id);
-    msg.channel.send(member2 + ` you have been given the role: ` + muteRole2.name + ` for: ${ms(ms(time2), { long: true })}`);
+    member2.roles.add(muteRole2.id);
+    msg.channel.send(`${member2} you have been given the role: ` + muteRole2.name + ` for: ${ms(ms(time2), { long: true })}`);
 
     setTimeout(function () {
-      member2.removeRole(muteRole2.id);
-      msg.channel.send(member2 + ` you role has been taken off of you your glory lasted: ${ms(ms(time2), { long: true })}`)
+      member2.roles.remove(muteRole2.id);
+      msg.channel.send(`${member2} you role has been taken off of you your glory lasted: ${ms(ms(time2), { long: true })}`)
 
     }, ms(time2));
 

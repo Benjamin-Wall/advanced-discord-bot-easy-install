@@ -57,7 +57,7 @@ bot.on("message", msg => {
 });
 
 bot.on("ready", () => {
-  log(`Ready to serve ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} servers.`);
+  log(`Ready to serve ${bot.users.cache.size} users, in ${bot.channels.cache.size} channels of ${bot.guilds.cache.size} servers.`);
 });
 
 bot.on("error", console.error);
@@ -96,12 +96,12 @@ bot.elevation = function (msg) {
      is then sent to the command handler for verification*/
   let permlvl = 0;
 
-  let mod_role = msg.guild.roles.find("name", "Members");
+  let mod_role = msg.guild.roles.cache.find(role => role.name === "Members");
   if (mod_role && msg.member.roles.has(mod_role.id)) permlvl = 2;
 
-  let admin_role = msg.guild.roles.find("name", "Higher-up Members");
+  let admin_role = msg.guild.roles.cache.find(role => role.name === "Higher-up Members");
   if (admin_role && msg.member.roles.has(admin_role.id)) permlvl = 3;
 
-  if (msg.author.id === "103509994074312704") permlvl = 4;
+  if (msg.author.id === "393972755479003136") permlvl = 4;
   return permlvl;
 };

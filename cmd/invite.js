@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 exports.run = (bot, msg, params) => {
 
-  var invite = new Discord.RichEmbed()
+  var invite = new Discord.MessageEmbed()
 
           .addField("__**" + "INVITE LINK: " + "**__", "https://discord.gg/TyM8AkG", true)
           .addField("__**" + "Bot Invite Link: " + "**__", "https://discordapp.com/oauth2/authorize?client_id=353154808078794752&scope=bot&permissions=2146958591", false)

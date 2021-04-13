@@ -8,7 +8,7 @@ exports.run = (bot, msg, params) => {
   if (!command) {
     return msg.channel.sendMessage(`I cannot find the command: ${params[0]}`);
   } else {
-    msg.channel.sendMessage(`Reloading: ${command}`)
+    msg.channel.send(`Reloading: ${command}`)
     .then(m => {
       bot.reload(command)
       .then(() => {

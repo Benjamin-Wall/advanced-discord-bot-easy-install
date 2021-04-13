@@ -49,7 +49,7 @@ exports.run = (bot, msg, params) => {
               var BD = getStatData(14, $);
               var HR = getStatData(15, $);
   
-              var STAT = new Discord.RichEmbed()
+              var STAT = new Discord.MessageEmbed()
   
               .setTitle("__***CSGO Stats***__")
               .setURL(UR_L)

@@ -21,7 +21,7 @@ exports.run = async (bot, msg, params) => {
     var YES_Count = reactions.get(agree).count;
   }
 
-  var sumsum = new Discord.RichEmbed()
+  var sumsum = new Discord.MessageEmbed()
   
             .addField("Voting Finished:", "----------------------------------------\n" +
                                           "Total votes (NO): " + `${NO_Count-1}\n` +

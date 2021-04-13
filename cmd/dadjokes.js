@@ -55,7 +55,7 @@ var jokes = [
 
 exports.run = (bot, msg, params) => {
 
-  var DAD = new Discord.RichEmbed()
+  var DAD = new Discord.MessageEmbed()
       .setDescription(jokes[Math.floor(Math.random() * jokes.length)])
 
       .setColor("0x#FF0000")
@@ -67,7 +67,7 @@ exports.run = (bot, msg, params) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['dad', 'joke'],
+  aliases: ['dad', 'joke', 'dadjokes'],
   permLevel: 0
 };
 

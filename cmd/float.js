@@ -40,7 +40,7 @@ exports.run = (bot, msg, params) => {
         FLOAT_NAME = "Factory New";
     }
 
-      var float = new Discord.RichEmbed()
+      var float = new Discord.MessageEmbed()
 
       .addField("-----Weapon Stats----- ",
                 "**Full Name: **" + data.iteminfo.weapon_type + " | " + data.iteminfo.item_name + ` (${FLOAT_NAME})` + "\n" +
