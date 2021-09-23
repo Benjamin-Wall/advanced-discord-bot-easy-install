@@ -1,6 +1,6 @@
-const Discord         = module.require('discord.js');
-var jimp              = require("jimp");
-var fs                = require('fs');
+const Discord = module.require('discord.js');
+var jimp = require("jimp");
+var fs = require('fs');
 
 exports.run = (bot, msg, params) => {
 

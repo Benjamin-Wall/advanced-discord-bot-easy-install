@@ -1,19 +1,28 @@
-const Discord = require("discord.js");
-const bot     = new Discord.Client({fetchAllMembers: true});
-const fs      = require("fs");
-const moment  = require("moment");
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v9');
+const { Client, Collection, Intents } = require('discord.js');
+const bot = new Client({
+  intents: [
+    Intents.FLAGS.GUILDS,
+    Intents.FLAGS.GUILD_MEMBERS,
+    Intents.FLAGS.GUILD_MESSAGES,
+    Intents.FLAGS.GUILDS
+  ]
+});
+const fs = require("fs");
+const moment = require("moment");
 
-var settings  = './settingsConfig/settings.json';
+var settings = './settingsConfig/settings.json';
 var file = require(settings)
-
-var TOKEN = file.TOKEN;
+var TOKEN = file.TOKEN
+var  rest = new REST({ version: '9' }).setToken(TOKEN);
 
 const log = (msg) => {
   console.log(`[${moment().format("YYYY-MM-DD HH:mm:ss")}] ${msg}`);
 };
 
-bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
+bot.commands = new Collection();
+bot.aliases = new Collection();
 fs.readdir("./cmd/", (err, files) => {
   if (err) console.error(err);
   log(`Loading a total of ${files.length} commands.`);
@@ -32,7 +41,7 @@ bot.on("guildMemberAdd", function(member) {
   })
 });
 
-bot.on("message", msg => {
+bot.on("messageCreate", msg => {
 
   var prefix = (file.prefix[msg.guild.id] == undefined) ? file.prefix["default"] : file.prefix[msg.guild.id];
 
