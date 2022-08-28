@@ -55,7 +55,7 @@ var jokes = [
 
 exports.run = (bot, msg, params) => {
 
-  var DAD = new Discord.MessageEmbed()
+  var DAD = new Discord.EmbedBuilder()
       .setDescription(jokes[Math.floor(Math.random() * jokes.length)])
 
       .setColor("0x#FF0000")

@@ -34,14 +34,14 @@ exports.run = async (bot, msg, params) => {
     var YES_Count = reactions.get(agree).count;
   }
 
-  var sumsum = new Discord.MessageEmbed()
+  var sumsum = new Discord.EmbedBuilder()
   
-            .addField("Voting Finished:", "----------------------------------------\n" +
+            .addFields({ name: "Voting Finished:", value: "----------------------------------------\n" +
                                           "Total votes (NO): " + `${NO_Count-1}\n` +
                                           "Total votes (Yes): " + `${YES_Count-1}\n` +
                                           "----------------------------------------\n" +
                                           "NOTE: Votes needed to kick (3+)\n" +
-                                          "----------------------------------------", true)
+                                          "----------------------------------------", inline: true })
 
             .setColor("0x#FF0000")
 

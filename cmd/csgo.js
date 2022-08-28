@@ -49,12 +49,12 @@ exports.run = (bot, msg, params) => {
               var BD = getStatData(14, $);
               var HR = getStatData(15, $);
   
-              var STAT = new Discord.MessageEmbed()
+              var STAT = new Discord.EmbedBuilder()
   
               .setTitle("__***CSGO Stats***__")
               .setURL(UR_L)
   
-              .addField("------------------------------------",
+              .addFields({ name: "------------------------------------", value:
                         "Total KD: " + "__**" + KD + "**__" + "\n" +
                         "Total Win%: " + "__**" + WIN + "**__" + "\n" +
                         "Total MVPs: " + "__**" + MVP + "**__" + "\n" +
@@ -66,7 +66,7 @@ exports.run = (bot, msg, params) => {
                         "Total Headshots: " + "__**" + HS + "**__" + "\n" +
                         "Total Money Earned: " + "__**" + MONEY + "**__" + "\n" +
                         "Total Hostages Rescued: " + "__**" + HR + "**__" + "\n" +
-                        "------------------------------------\n", true)
+                        "------------------------------------\n", inline: true })
   
                 .setColor("0x#FF0000")
               msg.channel.send(STAT);

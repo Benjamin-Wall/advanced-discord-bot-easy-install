@@ -10,8 +10,8 @@
     "discord-api-types": "^0.37.5",
     "discord.js": "^14.3.0",
     "get-json": "^1.0.1",
-    "google-images": "^0.1.4",
-    "jimp": "^0.16.0",
+    "google-images": "^2.1.0",
+    "jimp": "^0.16.1",
     "moment": "^2.29.4",
     "ms": "^3.0.0-canary.1",
     "request": "^2.88.2"

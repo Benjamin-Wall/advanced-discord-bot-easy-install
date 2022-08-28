@@ -40,14 +40,14 @@ exports.run = (bot, msg, params) => {
         FLOAT_NAME = "Factory New";
     }
 
-      var float = new Discord.MessageEmbed()
+      var float = new Discord.EmbedBuilder()
 
-      .addField("-----Weapon Stats----- ",
+      .addFields({ name: "-----Weapon Stats----- ", value:
                 "**Full Name: **" + data.iteminfo.weapon_type + " | " + data.iteminfo.item_name + ` (${FLOAT_NAME})` + "\n" +
                 "**Weapon Name: **" + data.iteminfo.weapon_type + "\n" +
                 "**Weapon Skin: **" + data.iteminfo.item_name + "\n" +
                 "**Weapon Wear: **" + FLOAT_NAME + "\n" +
-                "**Float Value: **" + data.iteminfo.floatvalue, true)
+                "**Float Value: **" + data.iteminfo.floatvalue, inline: true })
 
       .setThumbnail(data.iteminfo.imageurl)
       .setColor(FLOAT_COLOR)

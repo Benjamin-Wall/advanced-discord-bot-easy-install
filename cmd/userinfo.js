@@ -5,11 +5,11 @@ exports.run = (bot, msg, params) => {
   let memberInfo = msg.mentions.members.first();
 
   if(!memberInfo){
-    var userinfo = new Discord.MessageEmbed()
-        .addField("-----User info----- ",
+    var userinfo = new Discord.EmbedBuilder()
+        .addFields({ name:"-----User info----- ", value:
                   "**Full Username: **" + `${msg.author.username}#${msg.author.discriminator}` + "\n" +
                   "**ID: **" + msg.author.id + "\n" +
-                  "**Created At: **" + msg.author.createdAt, true)
+                  "**Created At: **" + msg.author.createdAt, inline: true })
 
         .setThumbnail(msg.author.avatarURL)
 
@@ -17,11 +17,11 @@ exports.run = (bot, msg, params) => {
 
   }else{
 
-    var userinfoo = new Discord.MessageEmbed()
-        .addField("-----User info----- ",
+    var userinfoo = new Discord.EmbedBuilder()
+        .addFields({ name: "-----User info----- ", value: 
                   "**Full Username: **" + `${memberInfo.user.username}#${memberInfo.user.discriminator}` + "\n" +
                   "**ID: **" + memberInfo.id + "\n" +
-                  "**Created At: **" + memberInfo.user.createdAt, true)
+                  "**Created At: **" + memberInfo.user.createdAt, inline: true })
 
         .setThumbnail(memberInfo.user.avatarURL)
 
