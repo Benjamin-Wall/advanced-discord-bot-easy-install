@@ -96,7 +96,7 @@ El proyecto no cuenta con prácticas de testing debt
 - Revisar que el tipo del mensaje que envía sea un RichEmbed.
 
 ## Recomendaciones
-- El comando [prefix](cmd/prefix.js) modifica un archivo de configuraciones directamente en el código, sería mejor cargar la configuración del prefijo desde una clase, así sería más fácil probar el cambio del prefijo así reviso  que el prefijo cambie en la clase en vez de estar sobrescribiendo archivos.
+- El comando [prefix](cmd/prefix.js) modifica un archivo de configuraciones directamente en el código, sería mejor cargar la configuración del prefijo desde una clase, sería más fácil probar el cambio del prefijo, se revisa que el prefijo cambie en la clase en vez de estar sobrescribiendo archivos.
 - Algunos comandos no se pusieron en los escenarios de pruebas porque el código dentro de ellos está bastante quemado y afectan directamente usuarios en discord, habría de mirar alguna forma de probarlos con un MOCK.
 - Para los comandos colocados habría que hacer un mock de canal de mensajes, usuario y/o servidor.
 - Para el archivo de reglas también se recomienda tener el listado de reglas en una clase y tener la opción de quitar reglas o agregarlas para que el bot sea más usable.
