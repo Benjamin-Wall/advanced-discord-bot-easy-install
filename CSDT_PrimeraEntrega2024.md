@@ -49,6 +49,12 @@ target.addRole(role.id).then(() => {
 });
 ```
 
+### Security
+Se obtuvo una calificación de A en esta métrica. Lo que quiere decir que no cuenta con vulnerabilidades
+
+### Security Review
+Se obtuvo una calificación de E en esta métrica. Lo que quiere decir que el porcentaje de revisión de los security hotspots es menor al 30%. Los security hotspots son posibles problemas de seguridad que requieren una revisión manual para determinar si esas alertas corresponden a una amenaza o no.
+
 ## Badges
 
 [![Build](https://github.com/CSDT-ECI/Ricardo-Martinez-advanced-discord-bot-easy-install/actions/workflows/build.yml/badge.svg)](https://github.com/CSDT-ECI/Ricardo-Martinez-advanced-discord-bot-easy-install/actions/workflows/build.yml)
