@@ -161,7 +161,7 @@ npm audit fix --force
 
 La herramienta solo pudo actualizar algunos paquetes:
 
-![packages-audited](/img/packages%20audited.pngpackages-audited.png)
+![packages audited](/img/packages-audited.png)
 
 Los demás tuvieron que ser revisados y reemplazados en las funciones.
 
