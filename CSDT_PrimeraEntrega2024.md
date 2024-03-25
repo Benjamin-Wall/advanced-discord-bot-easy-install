@@ -53,7 +53,14 @@ target.addRole(role.id).then(() => {
 Se obtuvo una calificación de A en esta métrica. Lo que quiere decir que no cuenta con vulnerabilidades
 
 ### Security Review
-Se obtuvo una calificación de E en esta métrica. Lo que quiere decir que el porcentaje de revisión de los security hotspots es menor al 30%. Los security hotspots son posibles problemas de seguridad que requieren una revisión manual para determinar si esas alertas corresponden a una amenaza o no.
+La herramienta encontro 9 security hotspots y obtuvo una calificación de E en esta métrica. Lo que quiere decir que el porcentaje de revisión de los security hotspots es menor al 30%. Los security hotspots son posibles problemas de seguridad que requieren una revisión manual para determinar si esas alertas corresponden a una amenaza o no.
+
+### Maintainability
+La herramienta encontró un total de 89 malos olores y obtuvo una calificación de A en esta métrica. Lo que quiere decir que el coeficiente de deuda técnica del código del proyecto es menor al 5 %. Por lo que se interpreta que el esfuerzo requerido para limpiar el código es de un día o menos.
+
+La herramienta también clasifico los malos olores en 3 niveles de severidad.
+
+![code-smells-severity](/img/code-smells-severity.png)
 
 ## Badges
 
