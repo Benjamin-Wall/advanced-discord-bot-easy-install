@@ -62,6 +62,12 @@ La herramienta también clasifico los malos olores en 3 niveles de severidad.
 
 ![code-smells-severity](/img/code-smells-severity.png)
 
+### Coverage
+La herramienta encontró un 0% de cobertura (líneas cubiertas por pruebas) en el código del proyecto. Esto se debe a que el proyecto no cuenta con pruebas.
+
+El análisis sobre las posibles pruebas y recomendaciones para agregar pruebas al proyecto se encuentran en [Testing Debt](/markdown-files/TestingDebt.md).
+
+
 ## Badges
 
 [![Build](https://github.com/CSDT-ECI/Ricardo-Martinez-advanced-discord-bot-easy-install/actions/workflows/build.yml/badge.svg)](https://github.com/CSDT-ECI/Ricardo-Martinez-advanced-discord-bot-easy-install/actions/workflows/build.yml)
