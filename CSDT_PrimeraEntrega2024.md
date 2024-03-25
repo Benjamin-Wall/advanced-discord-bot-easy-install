@@ -139,6 +139,9 @@ Usando esta clase el código que implementarian los comandos sería:
     const YES_Count = reactions.get(agree).count ?? 0;
     const NO_Count = reactions.get(disagree).count ?? 0;
     ```
+Con esta solución no solo se evita el código duplicado, sino que queda abierta la funcionalidad para manejar diferentes tipos de votación o para poder desde la invocación del comando configurar el mensaje y los tiempos de respuesta.
+
+
 
 ## Badges
 
