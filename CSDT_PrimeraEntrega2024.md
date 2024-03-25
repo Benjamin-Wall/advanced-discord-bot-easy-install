@@ -67,6 +67,78 @@ La herramienta encontró un 0% de cobertura (líneas cubiertas por pruebas) en e
 
 El análisis sobre las posibles pruebas y recomendaciones para agregar pruebas al proyecto se encuentran en [Testing Debt](/markdown-files/TestingDebt.md).
 
+### Duplications
+La herramienta encontró un 3% de duplicaciones de código. Después de revisar el reporte, este resultado se debe a que en los archivos [vote.js](cmd/vote.js) y [votekick.js](cmd/votekick.js) se repite el siguiente bloque de código: 
+
+
+```javascript
+  let VOTE_TEXT = await msg.channel.send("Vote now! (10 Seconds)");
+  await VOTE_TEXT.react(agree);
+  await VOTE_TEXT.react(disagree);
+
+  const reactions = await VOTE_TEXT.awaitReactions(reaction => reaction.emoji.name === agree || reaction.emoji.name === disagree, {time: 10000});
+  VOTE_TEXT.delete();
+
+  var NO_Count = reactions.get(disagree).count;
+  var YES_Count = reactions.get(agree);
+
+  if(YES_Count == undefined){
+    var YES_Count = 1;
+  }else{
+    var YES_Count = reactions.get(agree).count;
+  }
+
+  var sumsum = new Discord.RichEmbed()
+  
+            .addField("Voting Finished:", "----------------------------------------\n" +
+                                          "Total votes (NO): " + `${NO_Count-1}\n` +
+                                          "Total votes (Yes): " + `${YES_Count-1}\n` +
+```
+Para solucionar esto la propuesta es crear una clase con las funciones para ejecutar el proceso de votación y que la usen los comandos [vote.js](cmd/vote.js) y [votekick.js](cmd/votekick.js).
+
+
+[Voting Handler Class](src/classes/voting-handler.js)
+
+Usando esta clase el código que implementarian los comandos sería:
+
+- [vote.js](cmd/vote.js)
+
+    ```Javascript
+    const options = [
+        { name: "Yes", emoji: agree },
+        { name: "No", emoji: disagree},
+    ];
+
+    let votingHandler = new VotingHandler(
+        "Vote now! (10 Seconds)",
+        options,
+        10000,
+        msg.channel
+    );
+    votingHandler.performVotingProcess();
+    ```
+
+
+- [votekick.js](cmd/votekick.js)
+
+    ```Javascript
+    const options = [
+        { name: "Yes", emoji: agree },
+        { name: "No", emoji: disagree},
+    ];
+
+    const voteText = `Do you want to kick ${kickmember.user.username}? Vote now! (10 Seconds)`;
+    let votingHandler = new VotingHandler(
+        voteText,
+        options,
+        10000,
+        msg.channel
+    );
+
+    const reactions = await votingHandler.performVotingProcess();
+    const YES_Count = reactions.get(agree).count ?? 0;
+    const NO_Count = reactions.get(disagree).count ?? 0;
+    ```
 
 ## Badges
 
