@@ -8,6 +8,8 @@ El objetivo de este archivo es consolidar los diferentes análisis y entregas qu
 
 ## Tabla de contenidos
 - [SonarCloud](#sonarcloud)
+- [Otras Recomendaciones](#otras-recomendaciones)
+- [Conclusiones](#conclusiones)
 - [Badges](#badges)
 
 ## Sonarcloud
@@ -141,6 +143,29 @@ Usando esta clase el código que implementarian los comandos sería:
     ```
 Con esta solución no solo se evita el código duplicado, sino que queda abierta la funcionalidad para manejar diferentes tipos de votación o para poder desde la invocación del comando configurar el mensaje y los tiempos de respuesta.
 
+## Otras recomendaciones
+### npm
+La herramienta de paquetes de node encontró 20 vulnerabilidades en los paquetes instalados y especificados en los archivos package*.json
+
+![packages warn](/img/packages-warning.png)
+
+Para revisar a detalle los paquetes que necesitan actualización se ejecuta el siguiente comando:
+```properties
+npm audit
+```
+
+Para usar la herramienta de paquetes de node para actualizar los paquetes se ejecuta:
+```properties
+npm audit fix --force
+```
+
+La herramienta solo pudo actualizar algunos paquetes:
+
+![packages-audited](/img/packages%20audited.pngpackages-audited.png)
+
+Los demás tuvieron que ser revisados y reemplazados en las funciones.
+
+## Conclusiones
 
 
 ## Badges
